@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DanielLogerstedt_Lab07.Enums
+namespace LendingLibrary.Enums
 {
     public enum Genre
     {

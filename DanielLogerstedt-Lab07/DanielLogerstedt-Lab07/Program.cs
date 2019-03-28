@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DanielLogerstedt_Lab07
+namespace LendingLibrary
 {
     class Program
     {
