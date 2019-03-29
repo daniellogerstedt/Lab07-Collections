@@ -30,7 +30,7 @@ namespace LendingLibrary.Classes
                 Shelf = array;
                 AdjustShelfSize();
             }
-            else if (NumberOfThings < (Shelf.Length * 1 / 4))
+            else if (NumberOfThings < (Shelf.Length * 1 / 4) && Shelf.Length > 10)
             {
                 T[] array = new T[Shelf.Length / 2];
                 for (int i = 0; i < Shelf.Length; i++)
@@ -59,16 +59,20 @@ namespace LendingLibrary.Classes
         /// <param name="item">The item to remove.</param>
         public void Remove(T item)
         {
-            NumberOfThings--;
-            for (int i = 0; i < Shelf.Length; i++)
+            bool found = false;
+            for (int i = 0; i < Shelf.Length - 1; i++)
             {
-                bool found = false;
                 if (Shelf[i].Equals(item) || found)
                 {
                     found = true;
                     Shelf[i] = Shelf[i + 1];
                 }
             }
+            if (found)
+            {
+                NumberOfThings--;
+            }
+            AdjustShelfSize();
         }
 
         /// <summary>

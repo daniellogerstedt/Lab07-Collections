@@ -6,7 +6,7 @@ namespace LendingLibrary.Enums
 {
     public enum Genre
     {
-        Science,
+        Science = 1,
         Fantasy,
         Nonfiction,
         Horror

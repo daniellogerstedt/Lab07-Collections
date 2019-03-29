@@ -9,5 +9,12 @@ namespace LendingLibrary.Classes
         string Author;
         string Title;
         int Genre;
+
+        public Book(string author, string title, int genre)
+        {
+            Author = author;
+            Title = title;
+            Genre = genre;
+        }
     }
 }
