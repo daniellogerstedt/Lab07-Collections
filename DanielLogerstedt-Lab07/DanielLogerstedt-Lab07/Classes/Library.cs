@@ -6,14 +6,8 @@ namespace LendingLibrary.Classes
 {
     public class Library<T> : IEnumerable
     {
-        T[] Shelf;
-        int NumberOfThings;
-
-        public Library()
-        {
-            T[] Shelf = new T[10];
-            NumberOfThings = 0;
-        }
+        public T[] Shelf = new T[10];
+        int NumberOfThings = 0;
 
         /// <summary>
         /// Adjusts the size based off how full the Library is. If the Library is more than 3/4 full it doubles the size. If the Library is less than 1/4 full it cuts it in half 
@@ -33,7 +27,7 @@ namespace LendingLibrary.Classes
             else if (NumberOfThings < (Shelf.Length * 1 / 4) && Shelf.Length > 10)
             {
                 T[] array = new T[Shelf.Length / 2];
-                for (int i = 0; i < Shelf.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
                     array[i] = Shelf[i];
                 }
@@ -48,9 +42,9 @@ namespace LendingLibrary.Classes
         /// <param name="item">The item to add.</param>
         public void Add(T item)
         {
-            NumberOfThings++;
             Shelf[NumberOfThings] = item;
-            AdjustShelfSize();
+            NumberOfThings++;
+            this.AdjustShelfSize();
         }
 
         /// <summary>
@@ -62,6 +56,7 @@ namespace LendingLibrary.Classes
             bool found = false;
             for (int i = 0; i < Shelf.Length - 1; i++)
             {
+                if (Shelf[i] == null) break;
                 if (Shelf[i].Equals(item) || found)
                 {
                     found = true;
