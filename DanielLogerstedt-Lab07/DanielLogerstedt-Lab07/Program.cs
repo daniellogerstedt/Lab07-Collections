@@ -12,7 +12,9 @@ namespace LendingLibrary
             Borrow();
         }
 
-
+        /// <summary>
+        /// Borrow runs through a basic demonstration of the Library/Book/Author classes. It adds a bunch of books to a library and distributes them across two other lists. It writes all of this to the console to show the functionality.
+        /// </summary>
         public static void Borrow()
         {
             Library<Book> library = new Library<Book>();

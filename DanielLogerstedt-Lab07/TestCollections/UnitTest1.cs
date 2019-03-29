@@ -71,5 +71,21 @@ namespace TestCollections
             library.Add(otherBook);
             Assert.Equal(2, library.Count());
         }
+
+        [Fact]
+        public void TryingToRemoveNullDoesNotThrow()
+        {
+            Library<Book> library = new Library<Book>();
+            library.Add(new Book(new Author { Name = "Test" }, "Test", Genre.Science));
+            try
+            {
+                library.Remove(null);
+            }
+            catch (Exception)
+            {
+                Assert.True(false);
+            }
+            Assert.True(true);
+        }
     }
 }

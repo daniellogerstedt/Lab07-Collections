@@ -53,6 +53,7 @@ namespace LendingLibrary.Classes
         /// <param name="item">The item to remove.</param>
         public void Remove(T item)
         {
+            if (item == null) return;
             bool found = false;
             for (int i = 0; i < Shelf.Length - 1; i++)
             {
